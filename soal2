@@ -1,15 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int angka[5] = {4, 2, 7, 1, 5};
-    
-    int sum = 0;
-    for (int i = 0; i < 5; i++) {
-        sum += angka[i];
+double hitungRataRata(int arr[], int ukuran) {
+    int total = 0;
+    for (int i = 0; i < ukuran; i++) {
+        total += arr[i];
     }
+    return (double)total / ukuran;
+}
+
+int main() {
+    int arr[] = {5, 10, 15, 20, 25};
+    int ukuran = sizeof(arr) / sizeof(arr[0]);
     
-    cout << "Hasil penjumlahan dari 5 bilangan tersebut adalah: " << sum << endl;
+    cout << "Rata-rata: " << hitungRataRata(arr, ukuran) << endl;
     
     return 0;
 }
